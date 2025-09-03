@@ -1,6 +1,10 @@
 {
   "name": "cbsd",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -20,5 +24,11 @@
   "packageManager": "pnpm@9.0.0",
   "engines": {
     "node": ">=18"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.542.0",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.3.7"
   }
 }
