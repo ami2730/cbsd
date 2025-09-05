@@ -1,5 +1,5 @@
 import { Button } from "@repo/ui/components/button"
-import { MyCard } from "@repo/ui/components/MyCard"
+import { Card1 } from "@repo/ui/components/card1"
 import { Loader2Icon } from "lucide-react"
 import {
   Card,
@@ -35,15 +35,11 @@ export default function Home() {
     <p>Card Footer</p>
   </CardFooter>
 </Card>
-<div className="flex h-screen items-center justify-center bg-gray-100">
-      <h1 className="text-3xl font-bold text-blue-600">Hello Tailwind + Next.js!</h1>
-    </div>
-  <MyCard
-  title="Dashboard Stats"
-  description="Latest updates"
-  content={<p>Some stats content goes here</p>}
-  icon={<button className="bg-primary text-primary-foreground px-4 py-2 rounded">View</button>}
-/>
+  <Card1
+        title="INCOME"
+        description=""
+        content={<p>1,234</p>}
+      />
     </main>
   )
 }
