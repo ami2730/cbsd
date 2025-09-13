@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Sidebar } from "@repo/ui/components/sidebar"
 import "@repo/ui/styles/globals.css"
 export const metadata: Metadata = {
   title: "Dashboard App",
@@ -12,8 +13,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       
       <body>
+       <div className="flex">
+         <Sidebar />
+       <div>
         {children}
+       </div>
+       </div>
       </body>
     </html>
   );

@@ -1,22 +1,56 @@
-import {
-  Card,
-  CardAction,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@repo/ui/components/card"
-import {StatsCard} from "@repo/ui/components/StatsCard"
-export default function Home() {
+import { StatsCard } from "@repo/ui/components/StatsCard";
+import { calculateFinanceStats, Transaction } from "@repo/ui/lib/finance";
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+export default async function Dashboard() {
+  // Fetch current month transactions
+  const currentTxnsRaw = await prisma.transaction.findMany({
+    where: {
+  createdAt : {
+        gte: new Date("2025-09-01"),
+        lt: new Date("2025-10-01"),
+      },
+    },
+    select: { type: true, amount: true },
+  });
+
+  // Fetch previous month transactions
+  const previousTxnsRaw = await prisma.transaction.findMany({
+    where: {
+  createdAt: {
+        gte: new Date("2025-08-01"),
+        lt: new Date("2025-09-01"),
+      },
+    },
+    select: { type: true, amount: true },
+  });
+
+  // Map Prisma data to Transaction type
+  const currentTxns: Transaction[] = currentTxnsRaw.map((t) => ({
+    type: t.type as "income" | "expense",
+    amount: t.amount,
+  }));
+  const previousTxns: Transaction[] = previousTxnsRaw.map((t) => ({
+    type: t.type as "income" | "expense",
+    amount: t.amount,
+  }));
+
+  // Calculate stats
+  const { stats } = calculateFinanceStats(currentTxns, previousTxns);
+
   return (
-     <main className="min-h-screen  p-6">
-    
-<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <StatsCard title="Total Income" value="$12,430" change="+8.2%" positive />
-      <StatsCard title="Total Expenses" value="$8,900" change="-2.3%" positive={false} />
-      <StatsCard title="Net Savings" value="$3,530" change="+12.5%" positive />
+    <div className="flex space-x-8  m-8">
+      {stats.map((s) => (
+        <StatsCard
+          key={s.title}
+          title={s.title}
+          value={`$${s.value.toFixed(2)}`}
+          change={s.change}
+          positive={s.positive}
+        />
+      ))}
     </div>
-    </main>
-  )
+  );
 }
