@@ -3,6 +3,7 @@ import { Button } from "@repo/ui/components/button"; // shadcn button (adjust pa
 
 import { ChevronLeft, Home, Settings, Users, PieChart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation"; 
 
 // --- Types ---
 export type SidebarItem = {
@@ -121,10 +122,12 @@ export default function Sidebar({
   width = "w-64",
 }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(collapsedProp);
+  const router = useRouter();
 
   function handleClick(item: SidebarItem) {
-    if (onNavigate) onNavigate(item);
-    // if item has href you could use router.push(item.href) in consumer
+    if (item.href) {
+      router.push(item.href); // navigate to href
+    }
   }
 
   return (

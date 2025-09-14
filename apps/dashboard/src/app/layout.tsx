@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import SidebarLayout from "./sidebar"
+import SidebarLayout from "./pages/sidebar"
 import "@repo/ui/styles/globals.css"
 export const metadata: Metadata = {
   title: "Dashboard App",
-  description: "Gym Dashboard App",
+  description: "Dashboard App",
 };
 
 export default function RootLayout({

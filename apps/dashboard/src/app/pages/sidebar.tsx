@@ -3,17 +3,18 @@
 import { useState } from "react";
 import Sidebar, { SidebarItem } from "@repo/ui/components/sidebar";
 import "@repo/ui/styles/globals.css";
-import { Home, PieChart, Users, Settings } from "lucide-react";
+import { Home, PieChart, Settings, ArrowLeftRight, BarChart3} from "lucide-react";
 
 const items: SidebarItem[] = [
   { id: "home", label: "Home", href: "/", icon: <Home className="h-5 w-5" /> },
-  { id: "reports", label: "Reports", href: "/reports", icon: <PieChart className="h-5 w-5" />, badge: 3 },
   {
-    id: "users",
-    label: "Users",
-    href: "/users",
-    icon: <Users className="h-5 w-5" />,
+    id: "trasactions",
+    label: "Trasactions",
+    href: "trasaction",
+    icon: <ArrowLeftRight className="h-5 w-5" />,
   },
+  { id: "analysis", label: "Analysis", href: "/analysis", icon: <BarChart3 className="h-5 w-5" /> },
+  { id: "reports", label: "Reports", href: "/reports", icon: <PieChart className="h-5 w-5" />, badge: 3 },
   { id: "settings", label: "Settings", href: "/settings", icon: <Settings className="h-5 w-5" /> },
 ];
 
