@@ -25,7 +25,7 @@ export default async function TransactionsPage() {
     date: tx.createdAt.toISOString(), // or tx.date.toLocaleDateString()
   }));
   return (
-    <div className="p-6 ml-72">
+    <div className=" ml-72">
       <h1 className="text-2xl font-bold mb-4">Transactions</h1>
       <Table columns={columns} data={formattedTransactions} />
     </div>

@@ -8,7 +8,7 @@ export default async function Dashboard() {
   
   return (
     
-    <div className="">
+    <div className="m-4 ">
       <div>
         <Status />
       </div>  

@@ -46,7 +46,7 @@ async function  status() {
   const { stats } = calculateFinanceStats(currentTxns, previousTxns);
 
   return (
-   <div className="flex space-x-8  m-6 ml-72">
+   <div className="flex space-x-8  ml-72">
       {stats.map((s) => (
         <StatsCard
           key={s.title}
