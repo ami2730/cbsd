@@ -11,7 +11,7 @@ interface StatsCardProps {
 
 export function StatsCard({ title, value, change, positive }: StatsCardProps) {
   return (
-    <Card className="flex-row gap-0 ">
+    <Card className="flex-row  flex-wrap  mx-auto max-w-screen-xl lg:m- lg:grid-cols-3 grid">
         <CardHeader className="">
             <ArrowDownLeft/>
         </CardHeader>

@@ -1,8 +1,9 @@
 import { StatsCard } from "@repo/ui/components/StatsCard";
 import { calculateFinanceStats, Transaction } from "@repo/ui/lib/finance";
 import { PrismaClient } from "@prisma/client";
-
+import TransactionsPage from "./trasaction/page"
 const prisma = new PrismaClient();
+
 
 export default async function Dashboard() {
   // Fetch current month transactions
@@ -41,7 +42,9 @@ export default async function Dashboard() {
   const { stats } = calculateFinanceStats(currentTxns, previousTxns);
 
   return (
-    <div className="flex space-x-8  m-8">
+    
+    <div className="ml-72">
+        <div className="flex space-x-8  m-8 ">
       {stats.map((s) => (
         <StatsCard
           key={s.title}
@@ -51,6 +54,10 @@ export default async function Dashboard() {
           positive={s.positive}
         />
       ))}
+    </div>
+    <div>
+      <TransactionsPage />
+    </div>
     </div>
   );
 }
