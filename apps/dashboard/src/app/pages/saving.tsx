@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import { SavingsChart } from "@repo/ui/components/savingChart";
+import { SavingsChart } from "@repo/ui/layouts/features/savingChart";
 import { startOfMonth, format } from "date-fns";
 
 const prisma = new PrismaClient();

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Sidebar, { SidebarItem } from "@repo/ui/components/sidebar";
+import Sidebar, { SidebarItem } from "@repo/ui/layouts/sidebar";
 import "@repo/ui/styles/globals.css";
 import { Home, PieChart, Settings, ArrowLeftRight, BarChart3} from "lucide-react";
 
@@ -19,7 +19,7 @@ const items: SidebarItem[] = [
 ];
 
 
-export default function SidebarLayout() {
+export default function SidebarLayout(props) {
    const [active, setActive] = useState('home');
   return (
    

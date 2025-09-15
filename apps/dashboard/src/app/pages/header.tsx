@@ -5,7 +5,7 @@ import { Button } from "@repo/ui/components/button";
 import { Bell, Search, Settings } from "lucide-react";
 import Image from "next/image";
 
-export default function HeaderBar() {
+export default function HeaderBar(props) {
   return (
     <header className="w-full h-16 border-b bg-white flex items-center justify-between px-4 shadow-sm">
       {/* Left: Search */}
@@ -36,7 +36,7 @@ export default function HeaderBar() {
             className="rounded-full"
           />
           <span className="hidden md:inline text-sm font-medium text-gray-700">
-            John Doe
+            Amanuel
           </span>
         </div>
       </div>

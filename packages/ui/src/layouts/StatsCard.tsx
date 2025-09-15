@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter} from "./card";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter} from "@repo/ui/components/card";
 import { ArrowDownCircle, ArrowUpCircle, PiggyBank } from "lucide-react";
 
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';

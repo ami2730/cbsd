@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-import Table from "@repo/ui/components/trasaction";
+import Table from "@repo/ui/layouts/trasaction";
 
 
 const prisma = new PrismaClient();
@@ -19,7 +19,7 @@ interface TransactionsPageProps {
 
 export default async function TransactionsPage({ searchParams }:TransactionsPageProps) {
   // Server-side fetch (no getServerSideProps)
- const number = Number(searchParams?.number) || 10;
+ const number = Number(searchParams?.number) || 20;
   const transactions = await prisma.transaction.findMany({
       orderBy: { createdAt: "desc" },
       take:number,

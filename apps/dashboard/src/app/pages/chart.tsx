@@ -1,4 +1,4 @@
-import { FinanceChart } from "@repo/ui/components/financeChart";
+import { FinanceChart } from "@repo/ui/layouts/features/financeChart";
 import { startOfMonth, format } from "date-fns";
 import { PrismaClient } from "@prisma/client";
 

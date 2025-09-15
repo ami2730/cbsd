@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import SidebarLayout from "./pages/sidebar"
 import "@repo/ui/styles/globals.css"
-import Header from "@repo/ui/components/header"
+import Header from "@repo/ui/layouts/header"
 export const metadata: Metadata = {
   title: "Dashboard App",
   description: "Dashboard App",

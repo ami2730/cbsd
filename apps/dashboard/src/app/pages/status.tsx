@@ -1,5 +1,5 @@
 import React from 'react'
-import { StatsCard } from "@repo/ui/components/StatsCard";
+import { StatsCard } from "@repo/ui/layouts/StatsCard";
 import { calculateFinanceStats, Transaction } from "@repo/ui/lib/finance";
 import { PrismaClient } from "@prisma/client";
 
