@@ -10,7 +10,7 @@ const items: SidebarItem[] = [
   {
     id: "trasactions",
     label: "Trasactions",
-    href: "trasaction",
+    href: "/trasaction",
     icon: <ArrowLeftRight className="h-5 w-5" />,
   },
   { id: "analysis", label: "Analysis", href: "/analysis", icon: <BarChart3 className="h-5 w-5" /> },
@@ -23,8 +23,10 @@ export default function SidebarLayout() {
    const [active, setActive] = useState('home');
   return (
    
-       <div className="h-screen fixed ">
-         <Sidebar items={items} activeId={active} onNavigate={(i) => setActive(i.id)}/>
+       <div className="h-screen  fixed ">
+         <div className="py-2 pb-18 h-full">
+          <Sidebar items={items} activeId={active} onNavigate={(i) => setActive(i.id)}/>
+         </div>
        </div>
      
   );

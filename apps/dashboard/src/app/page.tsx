@@ -1,6 +1,7 @@
 
-import Charts from "./analysis/page"
-import TransactionsPage from "./trasaction/page"
+import Chart from './pages/chart'
+import Saving from "./pages/saving"
+import TransactionsPage from "./pages/trasaction"
 import Status from "./pages/status";
 
 export default async function Dashboard() {
@@ -8,16 +9,13 @@ export default async function Dashboard() {
   
   return (
     
-    <div className="m-4 ">
-      <div>
+    <div className="w-screen ">
+      <div className='p-6'>
         <Status />
+        <Chart />
+        <Saving />
+        <TransactionsPage />
       </div>  
-     <div className="">
-      <Charts />
-    </div>
-    <div >
-      <TransactionsPage />
-    </div>
     </div>
   );
 }

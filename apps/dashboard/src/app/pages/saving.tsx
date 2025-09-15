@@ -35,7 +35,7 @@ export default async function DashboardPage() {
   const savingsData = await getSavingsData();
 
   return (
-    <div className="p-6 ">
+    <div className="p-6 ml-60">
       <SavingsChart data={savingsData} />
     </div>
   );

@@ -2,8 +2,10 @@ import React from 'react'
 import TransactionsPage from '../pages/trasaction'
 function page() {
   return (
-    <div className='max-w-full'>
-      <TransactionsPage />
+    <div className='ml-0 w-screen '>
+      <div >
+        <TransactionsPage />
+      </div>
     </div>
   )
 }

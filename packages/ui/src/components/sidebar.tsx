@@ -3,7 +3,7 @@ import { Button } from "@repo/ui/components/button"; // shadcn button (adjust pa
 
 import { ChevronLeft, Home, Settings, Users, PieChart } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation"; 
+import { useRouter, usePathname } from "next/navigation"; 
 
 // --- Types ---
 export type SidebarItem = {
@@ -51,7 +51,7 @@ function ItemRow({
 }) {
   const hasChildren = item.children && item.children.length > 0;
   const paddingLeft = Math.min(12 + depth * 12, 48);
-  const isActive = item.id === activeId;
+  const isActive = item.href === activeId;
 
   return (
     <li>
@@ -123,6 +123,7 @@ export default function Sidebar({
 }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(collapsedProp);
   const router = useRouter();
+  const pathname = usePathname();
 
   function handleClick(item: SidebarItem) {
     if (item.href) {
@@ -159,7 +160,7 @@ export default function Sidebar({
             <ItemRow
               key={item.id}
               item={item}
-              activeId={activeId}
+              activeId={pathname}
               collapsed={collapsed}
               onClick={handleClick}
             />

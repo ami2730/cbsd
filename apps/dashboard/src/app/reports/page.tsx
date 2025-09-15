@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='ml-72'>
+    <div className='ml-60'>
       reports
     </div>
   )
