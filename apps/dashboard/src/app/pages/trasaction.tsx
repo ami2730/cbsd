@@ -29,7 +29,7 @@ export default async function TransactionsPage({ searchParams }:TransactionsPage
     date: tx.createdAt.toISOString(), // or tx.date.toLocaleDateString()
   }));
   return (
-    <div className="p-6 ml-60">
+    <div className=" ml-55">
       <h1 className="text-2xl font-bold pb-6">Transactions</h1>
       <Table columns={columns} data={formattedTransactions} />
     </div>

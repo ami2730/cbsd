@@ -11,7 +11,7 @@ export default async function Dashboard() {
     
     <div className="">
 
-      <div className='p-6'>
+      <div className='p-6 mb-10'>
         <div className='ml-60 mb-6'>
           <h1 className="text-2xl font-bold">Financial Dashboard</h1>
         </div>
