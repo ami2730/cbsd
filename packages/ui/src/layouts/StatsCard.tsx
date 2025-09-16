@@ -28,13 +28,13 @@ function getIcon(title: string) {
 export function StatsCard({ title, value, change, positive }: StatsCardProps) {
   console.log("title is:", title);
   return (
-    <Card className="flex-row  flex-wrap  mx-auto max-w-screen-xl lg:m- lg:grid-cols-3 grid">
+    <Card className="flex-row  flex-wrap  mx-auto max-w-screen-x lg:grid-cols-3 grid">
         <CardHeader >
            <div className="">{getIcon(title)}</div>
         </CardHeader>
         <CardContent>
           <CardTitle className="text-sm font-medium text-gray-500">{title}</CardTitle>
-          <CardDescription className="text-2xl font-bold text-gray-900">{value}</CardDescription>
+          <CardDescription className="text-1xl font-bold text-gray-900">{value}</CardDescription>
         </CardContent>
         <CardFooter>{change && (
       <p

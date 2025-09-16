@@ -23,7 +23,7 @@ export default function SidebarLayout(props) {
    const [active, setActive] = useState('home');
   return (
    
-       <div className="h-screen  fixed ">
+       <div className="h-screen  fixed ml-5 mt-10">
          <div className="py-2 pb-18 h-full">
           <Sidebar items={items} activeId={active} onNavigate={(i) => setActive(i.id)}/>
          </div>

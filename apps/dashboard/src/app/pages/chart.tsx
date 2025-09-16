@@ -34,7 +34,7 @@ export default async function chart() {
   const data = await getChartData();
 
   return (
-    <div className="p-6 ml-60">
+    <div className="p-6 ml-50">
       <FinanceChart data={data} />
     </div>
   );

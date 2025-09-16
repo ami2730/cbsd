@@ -9,8 +9,12 @@ export default async function Dashboard() {
   
   return (
     
-    <div className="w-screen ">
+    <div className="">
+
       <div className='p-6'>
+        <div className='ml-60 mb-6'>
+          <h1 className="text-2xl font-bold">Financial Dashboard</h1>
+        </div>
         <Status />
         <Chart />
         <Saving />
