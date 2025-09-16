@@ -7,7 +7,7 @@ function page() {
   return (
     <div className="">
       <div className='p-6'>
-        <h1 className="text-2xl font-bold ml-70">Transactions</h1>
+        <h1 className="text-2xl font-bold ml-60 pb-6">Financial Analysis</h1>
         <Status />
         <Chart />
         <Saving />
