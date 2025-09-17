@@ -34,7 +34,7 @@ export function StatsCard({ title, value, change, positive }: StatsCardProps) {
         </CardHeader>
         <CardContent>
           <CardTitle className="text-sm font-medium text-gray-500">{title}</CardTitle>
-          <CardDescription className="text-1xl font-bold text-gray-900">{value}</CardDescription>
+          <CardDescription className="text-xl font-bold text-gray-900">{value}</CardDescription>
         </CardContent>
         <CardFooter>{change && (
       <p
